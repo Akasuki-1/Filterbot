@@ -4,7 +4,6 @@ from telegram import Bot, Update, Message, Chat
 from telegram.ext import run_async
 
 from miakhalifa import dispatcher
-from miakhalifa.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
@@ -43,10 +42,5 @@ Want to get the lyrics of your favorite songs straight from the app? This module
  You can either enter just the song name or both the artist and song name.
 """
 
-__mod_name__ = "SONG LYRICS"
+__mod_name__ = "*SONG LYRICS*"
 
-
-
-LYRICS_HANDLER = DisableAbleCommandHandler("lyrics", lyrics, pass_args=True)
-
-dispatcher.add_handler(LYRICS_HANDLER)
