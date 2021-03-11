@@ -51,6 +51,9 @@ USER_SETTINGS = {}
 
 DEVIL_IMG=START_PHOTTO
 
+JOKER_TEXT = """ /img1 \n 
+                 /img2 \n """
+ 
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("tg_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
@@ -352,6 +355,17 @@ def get_settings(bot: Bot, update: Update):
     else:
         send_settings(chat.id, user.id, True)
 
+@run_async
+def Img(update: Update, context: CallbackContext):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+    bot = context.bot
+    if chat.type == "public":
+        update.effective_message.reply_text(
+            JOKER_TEXT,
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True)
+
 
 @run_async
 def donate(bot: Bot, update: Update):
@@ -404,6 +418,8 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
+    img_handler = CommandHandler("img", img)
+
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -415,6 +431,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
+    dispatcher.add_handler(img_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
