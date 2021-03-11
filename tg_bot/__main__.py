@@ -49,7 +49,7 @@ DATA_EXPORT = []
 CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
-DEVIL_IMG=START_PHOTTO
+DEVIL_IMG = "https://telegra.ph/file/00d720d86785b1e93ec2d.jpg"
 
 JOKER_TEXT = """ /img1 \n 
                  /img2 \n """
