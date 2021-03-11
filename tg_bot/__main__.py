@@ -356,15 +356,13 @@ def get_settings(bot: Bot, update: Update):
         send_settings(chat.id, user.id, True)
 
 @run_async
-def Img(update: Update, context: CallbackContext):
+def img(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
-    bot = context.bot
+
     if chat.type == "public":
-        update.effective_message.reply_text(
-            JOKER_TEXT,
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True)
+        update.effective_message.reply_text(JOKER_TEXT, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
 
 
 @run_async
