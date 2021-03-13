@@ -358,6 +358,14 @@ def get_settings(bot: Bot, update: Update):
     else:
         send_settings(chat.id, user.id, True)
 
+@run_async
+def 1(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC1, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
 
 @run_async
 def appchi(bot: Bot, update: Update):
@@ -409,6 +417,8 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
+    1_handler = CommandHandler("1", 1)
+
     appchi_handler = CommandHandler("appchi", appchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -420,6 +430,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(appchi_handler)
+    dispatcher.add_handler(1_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
