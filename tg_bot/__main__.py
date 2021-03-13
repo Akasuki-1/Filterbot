@@ -12,7 +12,7 @@ from telegram.utils.helpers import escape_markdown
 from tg_bot.modules.helper_funcs.admin_rights import user_can_ban
 from tg_bot.modules.helper_funcs.readable_time import get_readable_time
 
-from Shoko import (
+from tg_bot import (
     dispatcher,
     since_time_start,
     updater,
