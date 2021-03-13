@@ -218,7 +218,7 @@ def help_button(bot: Bot, update: Update):
 
 
 @run_async
-def tg_bot_about_callback(update, context):
+def bravoj_about_callback(update, context):
     query = update.callback_query
     if query.data == "aboutmanu_":
         query.message.edit_text(
@@ -514,7 +514,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(tg_bot_about_callback, pattern=r"aboutmanu_")
+    about_callback_handler = CallbackQueryHandler(bravoj_about_callback, pattern=r"aboutmanu_")
 
 
     donate_handler = CommandHandler("donate", donate)
