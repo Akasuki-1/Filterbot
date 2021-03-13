@@ -24,6 +24,12 @@ I'm Filter Manager Bot Maintained By [{}](https://t.me/{}).
 """
 
 
+DM_START_KEY = """
+Hi {}, my name is {}! 
+I am the group management bot of FOCUS MOVIES .. You guys can't use me or add me to groups.........
+"""
+
+
 HELP_STRINGS = """
 Hello! my name is *{}*.
 
@@ -429,8 +435,11 @@ def f(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
 
     if chat.type == "private":
-        update.effective_message.reply_photo(ERROR_PIC6, text="hey there! Shoko is alive :3", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-        
+        update.effective_message.reply_photo(ERROR_PIC6, DM_START_KEY.format(
+                    escape_markdown(first_name),
+                    escape_markdown(bot.first_name),
+                parse_mode=ParseMode.MARKDOWN,  
+                disable_web_page_preview=True)     
 
 @run_async
 def ppchi(bot: Bot, update: Update):
