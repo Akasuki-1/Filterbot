@@ -359,7 +359,7 @@ def get_settings(bot: Bot, update: Update):
         send_settings(chat.id, user.id, True)
 
 @run_async
-def 1(bot: Bot, update: Update):
+def a(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
 
@@ -368,7 +368,7 @@ def 1(bot: Bot, update: Update):
 
 
 @run_async
-def appchi(bot: Bot, update: Update):
+def ppchi(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
 
@@ -417,9 +417,9 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    1_handler = CommandHandler("1", 1)
+    a_handler = CommandHandler("a", a)
 
-    appchi_handler = CommandHandler("appchi", appchi)
+    ppchi_handler = CommandHandler("ppchi", ppchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
@@ -429,8 +429,8 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(appchi_handler)
-    dispatcher.add_handler(1_handler)
+    dispatcher.add_handler(ppchi_handler)
+    dispatcher.add_handler(a_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
