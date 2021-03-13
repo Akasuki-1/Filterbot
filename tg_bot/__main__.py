@@ -461,14 +461,6 @@ def get_settings(bot: Bot, update: Update):
     else:
         send_settings(chat.id, user.id, True)
 
-@run_async
-def img(bot: Bot, update: Update):
-    user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
-
-    if chat.type == "public":
-        update.effective_message.reply_text(JOKER_TEXT, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-
 
 
 @run_async
@@ -537,7 +529,7 @@ def main():
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
-    dispatcher.add_handler(img_handler)
+    
 
     # dispatcher.add_error_handler(error_callback)
 
