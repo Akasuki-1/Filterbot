@@ -21,8 +21,9 @@ PM_START_TEXT = """
 
 Hello {},My Name is {} !. 
 
+```picture``` - /a /b /c /d /e /f .
+
 I'm Filter Manager Bot Maintained By {} {}. 
-```picture``` - /a /b /c /d /e /f
 
 """
 
