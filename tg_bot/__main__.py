@@ -21,7 +21,8 @@ PM_START_TEXT = """
 
 Hello {},My Name is {} !. 
 
-I'm Filter Manager Bot Maintained By {}). 
+I'm Filter Manager Bot Maintained By {} {}. 
+```picture``` - /a /b /c /d /e /f
 
 """
 
@@ -366,6 +367,46 @@ def a(bot: Bot, update: Update):
     if chat.type == "private":
         update.effective_message.reply_photo(ERROR_PIC1, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
+@run_async
+def b(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC2, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+@run_async
+def c(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC3, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+@run_async
+def d(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC4, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+@run_async
+def e(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC5, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+@run_async
+def f(bot: Bot, update: Update):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
 
 @run_async
 def ppchi(bot: Bot, update: Update):
@@ -418,6 +459,11 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
     a_handler = CommandHandler("a", a)
+    b_handler = CommandHandler("b", b)
+    c_handler = CommandHandler("c", c)
+    d_handler = CommandHandler("d", d)
+    e_handler = CommandHandler("e", e)
+    f_handler = CommandHandler("f", f)
 
     ppchi_handler = CommandHandler("ppchi", ppchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -431,6 +477,11 @@ def main():
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(ppchi_handler)
     dispatcher.add_handler(a_handler)
+    dispatcher.add_handler(b_handler)
+    dispatcher.add_handler(c_handler)
+    dispatcher.add_handler(d_handler)
+    dispatcher.add_handler(e_handler)
+    dispatcher.add_handler(f_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
