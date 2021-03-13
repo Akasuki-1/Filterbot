@@ -18,14 +18,11 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-
 Hello {},My Name is {} !. 
-
-```picture``` - /a /b /c /d /e /f .
-
-I'm Filter Manager Bot Maintained By {} {}. 
-
+Picturez - /a /b /c /d /e /f
+I'm Filter Manager Bot Maintained By [{}](https://t.me/{}). 
 """
+
 
 HELP_STRINGS = """
 Hello! my name is *{}*.
