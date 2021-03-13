@@ -56,6 +56,32 @@ ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
 ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
 ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
+RICK_JOHON = """
+❇️Welcome To @Pruthvi_RJ_Group 
+
+❇️The Rules @Pruthvi_RJ_Group  Given Below
+
+Request Format #Request Movie_Name
+
+Example #Request Kirik party
+
+👆👆You Should Request Your Movies like this
+ 
+🚫 don't Request Still Not Released Movies and Digitally Not Released Movies..
+
+🚫 Don't Spam Here..
+
+🚫 No forwarding files from other channels.
+
+🚫 No Sharing Theater Print Files...
+
+✅ only Kannada Movies Can Be Requested Here...
+
+❌ Other Language Movies Not Allowed...
+
+✅ Share And Support us
+"""
+
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("tg_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
@@ -403,7 +429,7 @@ def f(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
 
     if chat.type == "private":
-        update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        update.effective_message.reply_photo(ERROR_PIC6, RICK_JOHON, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
 @run_async
