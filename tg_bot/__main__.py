@@ -431,10 +431,11 @@ def e(bot: Bot, update: Update):
 
 @run_async
 def f(bot: Bot, update: Update):
-    first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(DEVIL_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="📞Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://telegram.dog/Mai_bOTs")],  
-                                                [InlineKeyboardButton(text="Creater",url="https://t.me/No_OnE_Kn0wS_Me"),InlineKeyboardButton(text="Mai Source",url="https://github.com/No-OnE-Kn0wS-Me/Filterbot")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+     if chat.type == "private"      
+        update.effective_message.reply_photo(DEVIL_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
