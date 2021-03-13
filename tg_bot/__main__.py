@@ -362,9 +362,9 @@ def appchi(bot: Bot, update: Update):
         update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
         if OWNER_ID != 254318997 and DONATION_LINK:
-            update.effective_message.reply_photo(DEVIL_IMG ),
-                                                parse_mode=ParseMode.MARKDOWN)
+            update.effective_message.reply_photo(DEVIL_IMG, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
+                                            
     else:
         try:
             bot.send_message(user.id, DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
