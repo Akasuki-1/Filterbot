@@ -50,6 +50,12 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 DEVIL_IMG=START_PHOTTO
+ERROR_PIC1 = "https://telegra.ph/file/5676359ac1bfb83b9f43b.jpg"
+ERROR_PIC2 = "https://telegra.ph/file/0d4de8335e7bfd3aaab26.jpg"
+ERROR_PIC3 = "https://telegra.ph/file/73e6306b4ab797a193112.jpg"
+ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
+ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
+ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("tg_bot.modules." + module_name)
@@ -359,7 +365,7 @@ def appchi(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
 
     if chat.type == "private":
-        update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        update.effective_message.reply_photo(DEVIL_IMG, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
         if OWNER_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_photo(DEVIL_IMG, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
