@@ -1,3 +1,5 @@
+from telegram import Bot, Update, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
+
 
 QWERTUR = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
