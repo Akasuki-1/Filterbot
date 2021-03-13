@@ -429,8 +429,9 @@ def f(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
 
     if chat.type == "private":
-        update.effective_message.reply_photo(ERROR_PIC6, RICK_JOHON, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-
+        update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        update.effective_message.reply_text("This person edited a message")
+    
 
 @run_async
 def ppchi(bot: Bot, update: Update):
