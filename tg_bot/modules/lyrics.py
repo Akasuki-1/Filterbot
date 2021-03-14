@@ -5,7 +5,6 @@ from telegram.ext import run_async
 
 from tg_bot import dispatcher
 
-SORTE_I = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
 @run_async
 def lyrics(bot: Bot, update: Update, args):
@@ -13,7 +12,7 @@ def lyrics(bot: Bot, update: Update, args):
     query = " ".join(args)
     song = ""
     if not query:
-        msg.reply_Photo(SORTE_I)
+        msg.reply_text("You haven't specified which song to look for!")
         return
     else:
         song = Song.find_song(query)
@@ -37,11 +36,9 @@ def lyrics(bot: Bot, update: Update, args):
                 
 __help__ = """
 Want to get the lyrics of your favorite songs straight from the app? This module is perfect for that!
-
 *Available commands:*
  - /lyrics <song>: returns the lyrics of that song.
  You can either enter just the song name or both the artist and song name.
 """
 
-__mod_name__ = "*SONG LYRICS"
-
+__mod_name__ = "SONG LYRICS"
