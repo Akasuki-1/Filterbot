@@ -463,8 +463,8 @@ def f(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
 
-    if chat.type == "public":
-        update.effective_message.reply_gif(FREE_FS, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+    if chat.type == "private":
+        update.effective_message.reply_video(FREE_FS, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 @run_async
 def rulez(bot: Bot, update: Update):
