@@ -58,7 +58,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     num_chats = sql.get_user_num_chats(user.id)
     text += f"\n🌐<b>Chat count:</b> <code>{num_chats}</code>"
     text += "\n<b>🎭Number of profile pics:</b> {}".format(bot.get_user_profile_photos(user.id).total_count)
-    text += "\n<b>Support Channel</b> : @mAI_bOTs"
+    text += "\n<b>Support Channel</b> : nothing"
 
     try:
         user_member = chat.get_member(user.id)
@@ -76,7 +76,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     if user.id == OWNER_ID:
         text += "\n🚶🏻‍♂️Uff,This person is my Owner🤴\nI would never do anything against him!."
         
-    elif user.id == 861055237:
+    elif user.id == 1350564182:
         text += "\n🚴‍♂️Pling,This person is my Creator/developer🤷‍♂️\nI would never do anything against him!."     
         
     elif user.id in SUDO_USERS:
