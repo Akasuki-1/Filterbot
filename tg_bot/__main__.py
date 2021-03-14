@@ -469,7 +469,7 @@ def f(bot: Bot, update: Update):
 def rulez(bot: Bot, update: Update):
     msg = update.effective_message.reply_photo(ERROR_PIC1) 
     for x in range(EDIT_TIMES):
-        msg.edit_text(moon_ani[x%8])
+        msg.edit_photo(moon_ani[x%8])
         time.sleep(EDIT_SLEEP)
     msg.edit_photo(ERROR_PIC99)
 
