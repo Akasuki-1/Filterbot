@@ -433,9 +433,9 @@ def e(bot: Bot, update: Update):
 def f(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
-    
-    if chat.type == "private":      
-        update.effective_message.reply_photo(DEVIL_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
+
+    if chat.type == "private":
+        update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
 @run_async
