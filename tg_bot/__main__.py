@@ -166,7 +166,8 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_sticker(SECRET_IMG, NO_JOKE, reply_markup=InlineKeyboardMarkup(
+            update.effective_message.reply_sticker(SECRET_IMG)
+            update.effective_message.reply_sticker(NO_JOKE, reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username))],  
                                                 [InlineKeyboardButton(text="Creater",url="https://t.me/the_noobhacker")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
