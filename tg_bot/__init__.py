@@ -3,6 +3,8 @@ import os
 import sys
 
 import telegram.ext as tg
+from telethon import TelegramClient
+
 
 # enable logging
 logging.basicConfig(
