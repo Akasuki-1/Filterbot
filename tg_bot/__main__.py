@@ -72,7 +72,7 @@ ERROR_PIC8 = "https://telegra.ph/file/b3f7639cef8e1ca84824b.jpg"
 #sleep how many times after each edit in 'moonanimation' 
 EDIT_SLEEP = 1
 #edit how many times in 'moonanimation' 
-EDIT_TIMES = 32
+EDIT_TIMES = 8
 
 moon_ani = [
             "ERROR_PIC1",
@@ -469,7 +469,7 @@ def f(bot: Bot, update: Update):
 def rulez(bot: Bot, update: Update):
     msg = update.effective_message.reply_photo(ERROR_PIC1) 
     for x in range(EDIT_TIMES):
-        msg.edit_text(moon_ani[x%32])
+        msg.edit_text(moon_ani[x%8])
         time.sleep(EDIT_SLEEP)
     msg.edit_photo(ERROR_PIC99)
 
