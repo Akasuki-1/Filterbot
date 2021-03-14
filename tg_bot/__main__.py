@@ -62,6 +62,46 @@ ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
 ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
 ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
+#sleep how many times after each edit in 'moonanimation' 
+EDIT_SLEEP = 1
+#edit how many times in 'moonanimation' 
+EDIT_TIMES = 32
+
+moon_ani = [
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖",
+            "🌗",
+            "🌘",    
+            "🌑",
+            "🌒",
+            "🌓",
+            "🌔",
+            "🌕",
+            "🌖"
+ ]
+
 SECRET_IMG =  "CAACAgEAAxkBAAIBHWBN67qbEnx7zqEAARP-uY6YBOi_CwACFwEAAk-acEaOOM7BkcVuZB4E"
 NO_JOKE = "CAACAgEAAxkBAAIBJGBN8-9edCUFn9yiQb4hb3fyfWSfAALhAANPEHFGe_0ZvMy6OmAeBA"
 
@@ -441,6 +481,14 @@ def f(bot: Bot, update: Update):
     if chat.type == "public":
         update.effective_message.reply_photo(DEVIL_IMG, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
+@run_async
+def rulez(bot: Bot, update: Update):
+    msg = update.effective_message.reply_text('🌚') 
+    for x in range(EDIT_TIMES):
+        msg.edit_text(moon_ani[x%32])
+        time.sleep(EDIT_SLEEP)
+    msg.edit_text('🌙')
+
 
 @run_async
 def ppchi(bot: Bot, update: Update):
@@ -498,6 +546,7 @@ def main():
     d_handler = CommandHandler("d", d)
     e_handler = CommandHandler("e", e)
     f_handler = CommandHandler("f", f)
+    RULEZZ_HANDLER = DisableAbleCommandHandler("rulez",rulez)
 
     ppchi_handler = CommandHandler("ppchi", ppchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -516,7 +565,8 @@ def main():
     dispatcher.add_handler(d_handler)
     dispatcher.add_handler(e_handler)
     dispatcher.add_handler(f_handler)
-
+    dispatcher.add_handler(RULEZZ_HANDLER)
+    
     # dispatcher.add_error_handler(error_callback)
 
     if WEBHOOK:
