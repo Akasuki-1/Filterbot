@@ -62,7 +62,7 @@ ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
 ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
 ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
 
-SECRET_IMG =  "CAACAgEAAxkBAAIBGmBN5pnXfYrbQ3PkbIycpr3DkVQFAAIPAQACh39xRu3VcsGQCk8YHgQ"
+SECRET_IMG =  "CAACAgEAAxkBAAIBHWBN67qbEnx7zqEAARP-uY6YBOi_CwACFwEAAk-acEaOOM7BkcVuZB4E"
 
 RICK_JOHON = """
 ❇️Welcome To @Pruthvi_RJ_Group 
@@ -166,8 +166,8 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_sticker(SECRET_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="📞Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://telegram.dog/Mai_bOTs")],  
-                                                [InlineKeyboardButton(text="Creater",url="https://t.me/No_OnE_Kn0wS_Me"),InlineKeyboardButton(text="Mai Source",url="https://github.com/No-OnE-Kn0wS-Me/Filterbot")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
+                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username))],  
+                                                [InlineKeyboardButton(text="Creater",url="https://t.me/the_noobhacker")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
          
 
