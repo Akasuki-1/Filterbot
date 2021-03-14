@@ -546,7 +546,7 @@ def main():
     d_handler = CommandHandler("d", d)
     e_handler = CommandHandler("e", e)
     f_handler = CommandHandler("f", f)
-    RULEZZ_HANDLER = DisableAbleCommandHandler("rulez",rulez)
+    RULEZZ_HANDLER = CommandHandler("rulez",rulez)
 
     ppchi_handler = CommandHandler("ppchi", ppchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
