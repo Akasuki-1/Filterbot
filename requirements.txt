@@ -1,4 +1,5 @@
 future
+telethon
 emoji
 requests
 sqlalchemy
