@@ -55,12 +55,16 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 DEVIL_IMG=START_PHOTTO
+ERROR_PIC0 = "https://telegra.ph/file/359bae4c47748aa5c1e54.jpg"
 ERROR_PIC1 = "https://telegra.ph/file/5676359ac1bfb83b9f43b.jpg"
 ERROR_PIC2 = "https://telegra.ph/file/0d4de8335e7bfd3aaab26.jpg"
 ERROR_PIC3 = "https://telegra.ph/file/73e6306b4ab797a193112.jpg"
 ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
 ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
 ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
+ERROR_PIC99 = "https://telegra.ph/file/4dac54cd8baa345e5edac.jpg"
+ERROR_PIC7 = "https://telegra.ph/file/022c44496b56bce06e96f.jpg"
+ERROR_PIC8 = "https://telegra.ph/file/b3f7639cef8e1ca84824b.jpg"
 
 #sleep how many times after each edit in 'moonanimation' 
 EDIT_SLEEP = 1
@@ -68,38 +72,15 @@ EDIT_SLEEP = 1
 EDIT_TIMES = 32
 
 moon_ani = [
-            "🌗",
-            "🌘",    
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕",
-            "🌖",
-            "🌗",
-            "🌘",    
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕",
-            "🌖",
-            "🌗",
-            "🌘",    
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕",
-            "🌖",
-            "🌗",
-            "🌘",    
-            "🌑",
-            "🌒",
-            "🌓",
-            "🌔",
-            "🌕",
-            "🌖"
+            "ERROR_PIC1",
+            "ERROR_PIC2",    
+            "ERROR_PIC3",
+            "ERROR_PIC4",
+            "ERROR_PIC5",
+            "ERROR_PIC6",
+            "ERROR_PIC7",
+            "ERROR_PIC8"
+          
  ]
 
 SECRET_IMG =  "CAACAgEAAxkBAAIBHWBN67qbEnx7zqEAARP-uY6YBOi_CwACFwEAAk-acEaOOM7BkcVuZB4E"
@@ -483,11 +464,11 @@ def f(bot: Bot, update: Update):
 
 @run_async
 def rulez(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('🌚') 
+    msg = update.effective_message.reply_photo(ERROR_PIC1) 
     for x in range(EDIT_TIMES):
         msg.edit_text(moon_ani[x%32])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('🌙')
+    msg.edit_photo(ERROR_PIC99)
 
 
 @run_async
