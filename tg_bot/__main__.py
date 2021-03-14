@@ -546,7 +546,7 @@ def main():
     d_handler = CommandHandler("d", d)
     e_handler = CommandHandler("e", e)
     f_handler = CommandHandler("f", f)
-    RULEZZ_HANDLEr = CommandHandler("rulez",rulez)
+    lolan_handler = CommandHandler("rulez",rulez)
 
     ppchi_handler = CommandHandler("ppchi", ppchi)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -565,7 +565,7 @@ def main():
     dispatcher.add_handler(d_handler)
     dispatcher.add_handler(e_handler)
     dispatcher.add_handler(f_handler)
-    dispatcher.add_handler(RULEZZ_HANDLEr)
+    dispatcher.add_handler(lolan_handler)
     
     # dispatcher.add_error_handler(error_callback)
 
