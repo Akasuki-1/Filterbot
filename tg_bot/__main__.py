@@ -434,7 +434,7 @@ def f(bot: Bot, update: Update):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
 
-    if chat.type == "private":
+    if chat.type == "public":
         update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
