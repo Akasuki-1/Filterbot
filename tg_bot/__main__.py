@@ -435,7 +435,7 @@ def f(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
 
     if chat.type == "public":
-        update.effective_message.reply_photo(ERROR_PIC6, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+        update.effective_message.reply_photo(DEVIL_IMG, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
 
 
 @run_async
