@@ -1,4 +1,5 @@
 future
+requests
 telethon
 emoji
 requests
