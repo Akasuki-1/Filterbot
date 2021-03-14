@@ -69,12 +69,10 @@ def main():
 
 
 
-__mod_name__ = "PICTURE"
+__mod_name__ = "NEW FEATURE"
 
 
 __help__ = """
-  
-  - /jokerr <reason>: Mark yourself as AFk
-  - brb <reason>: Same as the afk command, but not a command.\n
-  When marked as AFK, any mentions will be replied to with a message stating that you're not available!
+  You can talk to the bot (starting with *tester* )
+Eg :- ```tester who is messi"
 """
