@@ -19,7 +19,7 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hello {},My Name is {} !. 
-Picturez - /a /b /c /d /e /f
+
 I'm Filter Manager Bot Maintained By [{}](https://t.me/{}). 
 """
 
@@ -61,6 +61,8 @@ ERROR_PIC3 = "https://telegra.ph/file/73e6306b4ab797a193112.jpg"
 ERROR_PIC4 = "https://telegra.ph/file/e05eac555667620c78c0a.jpg"
 ERROR_PIC5 = "https://telegra.ph/file/fa5987927d2d39aac288e.jpg"
 ERROR_PIC6 = "https://telegra.ph/file/ff1e6ce577cbc289fc321.jpg"
+
+SECRET_IMG =  "CAACAgEAAxkBAAIBGmBN5pnXfYrbQ3PkbIycpr3DkVQFAAIPAQACh39xRu3VcsGQCk8YHgQ"
 
 RICK_JOHON = """
 ❇️Welcome To @Pruthvi_RJ_Group 
@@ -163,7 +165,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(DEVIL_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),reply_markup=InlineKeyboardMarkup(
+            update.effective_message.reply_sticker(SECRET_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_USERNAME ),reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="📞Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://telegram.dog/Mai_bOTs")],  
                                                 [InlineKeyboardButton(text="Creater",url="https://t.me/No_OnE_Kn0wS_Me"),InlineKeyboardButton(text="Mai Source",url="https://github.com/No-OnE-Kn0wS-Me/Filterbot")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
