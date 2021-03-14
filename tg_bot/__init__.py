@@ -117,7 +117,7 @@ dispatcher = updater.dispatcher
 SUDO_USERS = list(SUDO_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
-telethn = TelegramClient("tg_bot", API_ID, API_HASH)
+telethn = TelegramClient("tester", API_ID, API_HASH)
 
 # Load at end to ensure all prev variables have been set
 from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler
